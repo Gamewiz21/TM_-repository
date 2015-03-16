@@ -226,7 +226,7 @@ TextureImporter:
         serializedVersion: 2
         x: 347
         y: 271
-        width: 130
+        width: 124
         height: 120
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -234,9 +234,9 @@ TextureImporter:
     - name: Big_2
       rect:
         serializedVersion: 2
-        x: 361
+        x: 362
         y: 93
-        width: 129
+        width: 122
         height: 103
       alignment: 0
       pivot: {x: .5, y: .5}
