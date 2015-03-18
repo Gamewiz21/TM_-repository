@@ -18,7 +18,7 @@ public class HealthBar : HealthManager {// inherits from healthManager script
 		// if health equals 0
         if(health <= 0)
         {	//reset the level
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
 	
 	}
