@@ -17,15 +17,28 @@ public class HealthBar : HealthManager {// inherits from healthManager script
       
 		// if health equals 0
         if(health <= 0)
-        {	//reset the level
-            Application.LoadLevel(1);
+        {	// value of Lives decrments
+			Lives--;
+			//reset the level
+           // Application.LoadLevel(1);
+			Destroy(this.gameObject);
+
         }
+		// if Number of Lives = zero
+		if (Lives <= 0)
+		{  // the game is over
+			Debug.Log ("ahh");
+		}
 	
 	}
 
     void OnGUI()
     {	// display the health value as a GUI on the HUD
         GUI.Label(new Rect(10, 30, 300, 150), "Health: " + health,HUD);
+
+		GUI.Label(new Rect(10, 50, 300, 150), "Lives: " + Lives,HUD);
+
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -38,7 +51,7 @@ public class HealthBar : HealthManager {// inherits from healthManager script
         if (other.gameObject.tag == "Void")
         {	//lose all health
             health -= 100;
-            Debug.Log("You're Dead");
+          
         }
     }
 }

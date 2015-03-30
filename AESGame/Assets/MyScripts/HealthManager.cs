@@ -3,12 +3,12 @@ using System.Collections;
 
 public class HealthManager : MonoBehaviour {
 
-
+	public int Lives;// life class
     public int health;// Health class
     protected virtual void Start()
     {
         health = 100;// intial health value at start of game for both player and enemy
-
+		Lives = 3;// Number of Lives the player has
     }
 
 
