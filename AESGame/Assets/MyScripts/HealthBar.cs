@@ -4,6 +4,7 @@ using System.Collections;
 public class HealthBar : HealthManager {// inherits from healthManager script
 	//HuD GUI
     public GUIStyle HUD;
+	public bool isDead = false;
 	// Use this for initialization
     protected override void Start()
     {
@@ -18,17 +19,20 @@ public class HealthBar : HealthManager {// inherits from healthManager script
 		// if health equals 0
         if(health <= 0)
         {	// value of Lives decrments
-			Lives--;
+
 			//reset the level
            // Application.LoadLevel(1);
 			Destroy(this.gameObject);
+			isDead = true;
 
         }
+		/*
 		// if Number of Lives = zero
 		if (Lives <= 0)
 		{  // the game is over
 			Debug.Log ("ahh");
 		}
+		*/
 	
 	}
 
@@ -36,7 +40,7 @@ public class HealthBar : HealthManager {// inherits from healthManager script
     {	// display the health value as a GUI on the HUD
         GUI.Label(new Rect(10, 30, 300, 150), "Health: " + health,HUD);
 
-		GUI.Label(new Rect(10, 50, 300, 150), "Lives: " + Lives,HUD);
+
 
 
     }

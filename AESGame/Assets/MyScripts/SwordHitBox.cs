@@ -19,15 +19,15 @@ public class SwordHitBox : MonoBehaviour {
 		}
 
 	void OnTriggerStay2D (Collider2D other)
-	{
+	{	//if the Hitbox comes in contact with the enemy
 		if (other.gameObject.tag == "Enemy") 
-		{
+		{	//the target is In Range
 			InRange =true;
 		}
 	}
 	void OnTriggerExit2D (Collider2D other)
 	{
-
+		// if Outside he is not in range
 		InRange =false;
 
 	}

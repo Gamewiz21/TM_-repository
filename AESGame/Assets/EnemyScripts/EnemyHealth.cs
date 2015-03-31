@@ -8,7 +8,7 @@ public class EnemyHealth : EnemyLifeManager {
 
 	void Awake() 
 	{	// hitbox equals the components from the SwordHitBox script
-		hitBox = GameObject.Find("Hitbox0").GetComponent<SwordHitBox>(); 
+
 
 	}
     protected override void Start()
@@ -22,6 +22,7 @@ public class EnemyHealth : EnemyLifeManager {
     // Update is called once per frame
     void Update()
     {
+		hitBox = GameObject.FindGameObjectWithTag("Hitbox").GetComponent<SwordHitBox>(); 
 		// if the player presses 0 and InRange is set as true
 		if (Input.GetKeyDown (KeyCode.O) && hitBox.InRange == true) 
 		{ // enemy loses 30 health
@@ -31,7 +32,8 @@ public class EnemyHealth : EnemyLifeManager {
 		// if enemyhealth equal 0
         if (enemyhealth <= 0)
         { 	// destroy gameObject
-            Destroy (this.gameObject);
+
+			gameObject.SetActive(false);
         }
 
     }
@@ -40,11 +42,12 @@ public class EnemyHealth : EnemyLifeManager {
 
     void OnTriggerEnter2D(Collider2D other)
     {	//if the weapon itself touches the collider
-        if (other.gameObject.tag == "Weapon")
+        /*
+		if (other.gameObject.tag == "Weapon")
         {	//enemy loses 30 health
             enemyhealth -= 30;
         }
-
+	*/
        
     }
 }
