@@ -17,8 +17,8 @@ public class Goal : MonoBehaviour {
 	{	// if player enters collider the 
 		if (other.gameObject.tag == "Player")
 		{
-			//Application.LoadLevel(1);
-			Debug.Log("Level Clear");
+			Application.LoadLevel(2);
+			
 		}
 	}
 }

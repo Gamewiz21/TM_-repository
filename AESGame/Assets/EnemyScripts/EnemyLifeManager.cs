@@ -5,17 +5,12 @@ public class EnemyLifeManager : MonoBehaviour {
 	
 	
 	public int enemyhealth;// Health class
-	protected virtual void Start()
+	protected void Start()
 	{
 		enemyhealth = 100;// intial health value at start of game for both player and enemy
 		
 	}
 	
-	
-	protected virtual void Update()
-	{
-		
-	}
 	public void setHealth(int number)
 	{
 		enemyhealth = number;
