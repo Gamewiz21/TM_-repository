@@ -4,19 +4,23 @@ using System.Collections;
 public class EnemyHealth : EnemyLifeManager {
 
 	public SwordHitBox hitBox;
+<<<<<<< HEAD
+=======
+	public AudioSource EDeathClip;
+>>>>>>> 098f8dd... Sound integrated
 	public bool InRange;
     // Use this for initialization
 
 	void Awake() 
 	{	// hitbox equals the components from the SwordHitBox script
-
+		hitBox = GameObject.FindGameObjectWithTag("Hitbox").GetComponent<SwordHitBox>(); 
 
 	}
 
     // Update is called once per frame
     void Update()
     {
-		hitBox = GameObject.FindGameObjectWithTag("Hitbox").GetComponent<SwordHitBox>(); 
+
 		// if the player presses 0 and InRange is set as true
 		if (Input.GetKeyDown (KeyCode.O) && InRange == true) 
 		{ // enemy loses 30 health
@@ -26,7 +30,7 @@ public class EnemyHealth : EnemyLifeManager {
 		// if enemyhealth equal 0
         if (enemyhealth <= 0)
         { 	// destroy gameObject
-
+			EDeathClip.Play ();
 			gameObject.SetActive(false);
         }
 

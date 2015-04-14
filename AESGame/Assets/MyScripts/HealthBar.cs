@@ -5,7 +5,9 @@ public class HealthBar : HealthManager {// inherits from healthManager script
 	//HuD GUI
     public GUIStyle HUD;
 	public bool isDead = false;
-	// Use this for initialization
+	public AudioClip DeathClip;// class of AudioClip
+	AudioSource audioSource;//instance of AudioSource
+	//public AudioClip audioClip;
     protected override void Start()
     {
         base.Start();
@@ -14,25 +16,19 @@ public class HealthBar : HealthManager {// inherits from healthManager script
 	
 	// Update is called once per frame
 	void Update () {
-
+		audioSource = this.gameObject.GetComponent<AudioSource>();// get the component of AudioSource
       
 		// if health equals 0
         if(health <= 0)
         {	// value of Lives decrments
 
-			//reset the level
-           // Application.LoadLevel(1);
-			Destroy(this.gameObject);
+			//plays Clip
+			audioSource.PlayOneShot(DeathClip);
+
 			isDead = true;
 
         }
-		/*
-		// if Number of Lives = zero
-		if (Lives <= 0)
-		{  // the game is over
-			Debug.Log ("ahh");
-		}
-		*/
+
 	
 	}
 

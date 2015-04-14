@@ -3,8 +3,13 @@ using System.Collections;
 
 public class HealthUp : MonoBehaviour {
 
+<<<<<<< HEAD
     private HealthBar Plus;
     
+=======
+    private HealthBar Plus;//instance of healthBar
+	public AudioSource HealthClip;// AudioSource
+>>>>>>> 098f8dd... Sound integrated
 	// Use this for initialization
 	void Start () {
 	
@@ -20,6 +25,7 @@ public class HealthUp : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+<<<<<<< HEAD
             this.gameObject.SetActive(false);
             Plus.health +=25;
         }
@@ -29,6 +35,13 @@ public class HealthUp : MonoBehaviour {
           
         }
          * */
+=======
+			HealthClip.Play ();//Plays Clip
+            this.gameObject.SetActive(false);// set object to inActive
+            Plus.health +=25;// increase health value by 25
+        }
+        
+>>>>>>> 098f8dd... Sound integrated
     }
     
 }

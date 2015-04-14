@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LifeCount : MonoBehaviour {
+public class LifeCount2 : MonoBehaviour {
 	public int Lives;// Life class
 	private HealthBar L;
 	public GUIStyle HUD;
-
+	
 	// Use this for initialization
 	void Start () {
 		Lives = 3;// Number of Lives the player has
@@ -20,12 +20,12 @@ public class LifeCount : MonoBehaviour {
 		{
 			Lives-= 1;//decrement health value by one
 		}
-
+		
 		if (Lives == 0)// if the player has no lives left
 		{
-			Application.LoadLevel(1);// the level ends
+			Application.LoadLevel(2);// the level ends
 		}
-	
+		
 	}
 	void OnGUI()
 	{	
@@ -33,6 +33,6 @@ public class LifeCount : MonoBehaviour {
 		//Note make height 1000 for max screen
 		
 	}
-
-
+	
+	
 }
