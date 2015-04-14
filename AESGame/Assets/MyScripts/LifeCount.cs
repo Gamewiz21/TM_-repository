@@ -5,15 +5,17 @@ public class LifeCount : MonoBehaviour {
 	public int Lives;// Life class
 	private HealthBar L;
 	public GUIStyle HUD;
+
 	// Use this for initialization
 	void Start () {
 		Lives = 3;// Number of Lives the player has
-	
+		// gets script from Player "HealthBar"
+		L = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		L = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar> ();// gets script from Player "HealthBar"
+
 		if(L.health <= 0)// if player health reaches 0
 		{
 			Lives-= 1;//decrement health value by one
