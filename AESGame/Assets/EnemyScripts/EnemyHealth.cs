@@ -4,10 +4,10 @@ using System.Collections;
 public class EnemyHealth : EnemyLifeManager {
 
 	public SwordHitBox hitBox;
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 	public AudioSource EDeathClip;
->>>>>>> 098f8dd... Sound integrated
+//>>>>>>> 098f8dd... Sound integrated
 	public bool InRange;
     // Use this for initialization
 
